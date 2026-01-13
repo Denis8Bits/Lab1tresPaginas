@@ -1,0 +1,41 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #0b1020;
+  color: #e6eef8;
+  line-height: 1.6;
+  padding: 1.25rem;
+}
+
+/* contenedor centrado */
+main, .site {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  background: rgba(255,255,255,0.02);
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+
+/* encabezados y párrafos */
+h1 { font-size: 2rem; text-align: center; margin-bottom: 0.5rem; letter-spacing: 1px; }
+h2 { font-size: 1.25rem; margin: 1rem 0 0.5rem; }
+
+p { margin: 0.5rem 0; color: #cbd5e1; }
+
+/* secciones */
+section { margin-bottom: 1rem; padding: 0.5rem; }
+
+/* enlaces y utilidades */
+a { color: #60a5fa; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.img-responsive { max-width: 100%; height: auto; display: block; }
+
+/* responsive */
+@media (min-width: 700px) {
+  body { padding: 2rem; }
+  h1 { font-size: 2.5rem; }
+}
