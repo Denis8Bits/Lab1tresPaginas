@@ -1,215 +1,454 @@
-/* Estilos para la página principal */
+/* ==========================================================================
+   Estilos Megadeth - Versión Profesional y Fluida (enero 2026)
+   ========================================================================== */
 
-body {
-    background: linear-gradient(to bottom, #0d0d0d, #1a0000);
-    color: #e0e0e0;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0%;
-    padding: 20px;
-    line-height: 1.6;
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset básico y variables */
+:root {
+    --bg-dark: #0d0d0d;
+    --bg-section: #1a1a1a;
+    --red-megadeth: #ff3333;
+    --red-light: #ff6666;
+    --text-light: #e0e0e0;
+    --border-dark: #333;
 }
 
-h1, h2, h3 {
-    color: #ff3333;
-    text-align: center;
-    text-shadow: 2px 2px 8px #000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    cursor: url('https://ani.cursors-4u.net/others/oth-9/oth904.cur'), auto; /* cursor metalero si encuentras uno chingón */
+    background: 
+        linear-gradient(135deg, #0d0d0d 0%, #1a0000 50%, #0d0d0d 100%),
+        url('https://www.transparenttextures.com/patterns/dark-mosaic.png'); /* textura metal oxidado sutil */
+    background-attachment: fixed;
+    background-size: cover, auto;
+    color: var(--text-light);
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0 10px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(255,51,51,0.03) 0%, transparent 50%, rgba(255,51,51,0.03) 100%);
+    animation: subtlePulse 15s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes subtlePulse {
+    0% { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* Header */
+header {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 40px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(26,0,0,0.9)), url('https://i.imgur.com/alguna-imagen-epica-de-megadeth.jpg') center/cover no-repeat fixed;
+    /* Cambia la url por una foto de concierto o portada épica que te guste */
+}
+
+.logo-principal {
+    width: 60%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto 15px;
+    border: none;
+    box-shadow: none;
+    filter: drop-shadow(0 0 20px rgba(255,51,51,0.6));
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 20px rgba(255,51,51,0.4)); }
+    to   { filter: drop-shadow(0 0 35px rgba(255,51,51,0.8)); }
 }
 
 h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-}
-
-section {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 12px;
-    margin: 30px auto;
-    padding: 25px;
-    max-width: 10000px;
-    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
-}
-
-img {
-    display: block;
-    margin: 20px auto;
-    border: 4px solid #ff3333;
-    border-radius: 10px;
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
-}
-
-a {
-    color: #ff6666;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #ff0000;
-}
-
-.integrantes img {
-    display: inline;
-    margin: 10px;
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ff3333;
-}
-
-/* Header y logo */
-header {
-    text-align: center;
-    padding: 20px 0;
-    background: linear-gradient(to bottom, #1a0000, #0d0d0d);
-}
-
-.logoPrincipal {
-    width: 50%;
-    max-width: 600px;
-    margin: 0 auto 10px;
-    border: none;
-    box-shadow: none;
+    font-family: 'Metal Mania', cursive;
+    font-size: 3.8rem;
+    color: var(--red-megadeth);
+    text-shadow: 3px 3px 10px #000;
+    margin-bottom: 10px;
 }
 
 /* Navegación */
 nav {
-    background-color: #000;
-    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--red-megadeth);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    transition: all 0.4s ease;
     text-align: center;
-    border-bottom: 3px solid #ff3333;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 18px;
 }
 
 nav a {
-    color: #ff6666;
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: color 0.3s;
+    color: var(--red-light);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background: var(--red-megadeth);
+    transition: width 0.4s ease;
 }
 
 nav a:hover {
-    color: #ffffff;
+    color: #fff;
+    transform: translateY(-3px);
 }
 
-/* Secciones específicas */
-section{
-    box-shadow: 0 8px 16px rgba(255, 51, 51, 0.15);
-}
-
-/* Fuentes */
-h1, h2 {
-    font-family: 'Metal Mania', cursive;
-}
-
-/* Responsive: para pantallas medianas y pequeñas (tablets y celulares) */
-
-/* Para tablets (ancho hasta 1024px) */
-@media (max-width: 1024px) {
-    body {
-        padding: 10px;  /* Menos espacio alrededor */
-    }
-
-    .logo-principal {
-        width: 70%;     /* Logo más grande en pantallas medianas */
-    }
-
-    nav li {
-        margin: 0 10px; /* Menos espacio entre items del menú */
-    }
-
-    section {
-        padding: 15px;
-        margin: 20px auto;
-    }
-
-    img {
-        width: 90%;     /* Imágenes casi full width */
-    }
-}
-
-/* Para celulares (ancho hasta 768px o menos) */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;   /* Título principal más pequeño */
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;    /* Si no cabe, baja a otra línea */
-        justify-content: center;
-    }
-
-    nav li {
-        margin: 10px 15px;  /* Más espacio vertical si se envuelve */
-        display: block;     /* Uno debajo del otro para mejor toque */
-    }
-
-    .integrantes img {
-        width: 100px;       /* Fotos de miembros más pequeñas */
-        height: 100px;
-        margin: 10px auto;  /* Centradas y con espacio */
-        display: block;     /* Una debajo de otra en móvil */
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    /* Para videos de YouTube: que no se salgan */
-    .video-Contenedor {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;        /* Asegura que no se salga */
-    margin: 20px auto;      /* Centrado y espacio */
-  }
-
-  .video-Contenedor iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+nav a:hover::after {
     width: 100%;
-    height: 100%;
-  }
 }
 
-/* div miembos */
-.miembro {
+/* Secciones generales */
+section {
+    background: var(--bg-section);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 1100px;
+    box-shadow: 0 8px 25px rgba(255, 51, 51, 0.15);
+    opacity: 0;
+}
+
+/* Animación fade-in suave y progresiva */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 1.2s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 2px solid transparent;
+    background: linear-gradient(#1a1a1a, #111);
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255,51,51,0.25);
+    border-image: linear-gradient(to right, transparent, var(--red-megadeth), transparent) 1;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255,51,51,0.08), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+/* Delays por sección (ajusta ids según tu HTML) */
+#porque       { animation-delay: 0.3s; }
+#historia     { animation-delay: 0.5s; }
+#integrantes  { animation-delay: 0.7s; }
+#discografía  { animation-delay: 0.9s; }
+#top5         { animation-delay: 1.1s; }
+#contacto     { animation-delay: 1.3s; }
+#agradecimientos { animation-delay: 1.5s; }
+
+/* Títulos */
+h2 {
+    font-family: 'Metal Mania', cursive;
+    color: var(--red-megadeth);
     text-align: center;
-    margin: 20px 0;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px #000;
+}
+
+/* Imágenes generales */
+img {
+    display: block;
+    margin: 25px auto;
+    max-width: 100%;
+    height: auto;
+    border: 4px solid var(--red-megadeth);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(255, 51, 51, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 35px rgba(255, 51, 51, 0.5);
+}
+
+/* Integrantes - Grid/Flex */
+.integrantes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.miembro {
+    flex: 1 1 220px;
+    max-width: 260px;
+    text-align: center;
+}
+
+.miembro img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--red-megadeth);
+}
+
+.miembro p {
+    margin: 12px 0 8px;
+    font-weight: 500;
 }
 
 .social-link {
-    display: block;
-    margin-top: 10px;
-    color: #ff6666;
+    display: inline-block;
+    color: var(--red-light);
     font-weight: bold;
     text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    color: #ffffff;
-    background: #ff3333;
+    background: var(--red-megadeth);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Top 5 */
+.top-list {
+    counter-reset: top-counter;
+    list-style: none;
+    margin: 30px 0;
+}
+
+.top-list li {
+    position: relative;
+    padding: 22px 25px 22px 70px;
+    margin: 18px 0;
+    background: linear-gradient(145deg, #222, #181818);
+    border-left: 8px solid var(--red-megadeth);
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.top-list li:hover {
+    transform: scale(1.03) translateX(10px);
+    box-shadow: 0 15px 30px rgba(255,51,51,0.3);
+}
+
+.top-list li::before {
+    counter-increment: top-counter;
+    content: counter(top-counter);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--red-light);
+    opacity: 0.85;
+    font-family: 'Metal Mania', cursive;
+}
+
+/* Enlaces generales */
+a {
+    color: var(--red-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+    background: linear-gradient(to top, #1a0000, var(--bg-dark));
+    border-top: 4px solid var(--red-megadeth);
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    header { padding: 30px 0 15px; }
+    .logo-principal { width: 70%; }
+    nav li { margin: 0 12px; }
+    section { padding: 20px; margin: 25px auto; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    nav ul { flex-direction: column; }
+    nav li { margin: 12px 0; display: block; }
+    .integrantes { flex-direction: column; align-items: center; }
+    .miembro { max-width: 280px; }
+    section { padding: 20px 15px; }
+}
+
+/* Íconos de Spotify en Top 5 */
+.spotify-link {
+    background: rgba(30, 215, 96, 0.15); /* Verde Spotify sutil */
+    padding: 1px 10px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;              /* Espacio entre ícono y texto */
+    margin-top: 12px;
+    color: #1DB954;         /* Verde oficial de Spotify */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.spotify-link:hover {
+    background: #1DB954;
+    color: #000 !important;        /* Verde más brillante al hover */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.6);
+}
+
+.spotify-icon {
+    width: 28px;            /* Tamaño */
+    height: 28px;
+    filter: brightness(1.1); /* Para que resalte en fondo oscuro */
+    transition: transform 0.3s ease;
+}
+
+.spotify-link:hover .spotify-icon {
+    transform: scale(1.2);  /* Ícono crece un poco al hover */
+}
+
+.spotify-link:hover::after {
+    content: "Escuchar en Spotify";
+    position: absolute;
+    background: #000;
+    color: #1DB954;
     padding: 5px 10px;
     border-radius: 5px;
+    font-size: 0.9rem;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Botón / Flecha para siguiente página */
+.next-page-btn {
+    text-align: center;
+    margin: 60px 0 40px;
+}
+
+.metal-button {
+    background: linear-gradient(135deg, #ff3333, #cc0000);
+    color: #fff;
+    font-family: 'Metal Mania', cursive;
+    font-size: 1.8rem;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255,51,51,0.5);
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.metal-button:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255,51,51,0.7);
+    background: linear-gradient(135deg, #ff6666, #ff0000);
+}
+
+.arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--red-megadeth);
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+
+.arrow-link:hover {
+    color: #fff;
+    transform: translateX(10px);
+}
+
+.metal-arrow {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(255,51,51,0.6));
+    transition: all 0.4s ease;
+}
+
+.arrow-link:hover .metal-arrow {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 25px rgba(255,51,51,0.9));
 }
