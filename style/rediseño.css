@@ -1,0 +1,222 @@
+:root {
+    --primary: #C3AB30;
+    --accent:  #003057;      /* Azul oscuro para contraste */
+    --text:    #000000;
+    --bg:      #FFFFFF;
+    --light:   #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+nav {
+    background-color: var(--accent);
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    background-color: var(--light);
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--text);
+    padding: 0.8rem 1.6rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #d4bd3a;
+}
+
+#partners, #galeria, #trabajos, #apoyanos {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+#trabajos, #apoyanos {
+    background-color: var(--light);
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.stats h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog {
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.blog ul {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.blog li {
+    margin: 1rem 0;
+}
+
+.blog a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.blog a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    nav ul { flex-direction: column; gap: 1rem; }
+    .stats { flex-direction: column; }
+}
+
+/* Botón "Ir a Rediseño" - next page */
+.next-page-btn {
+    text-align: center;
+    margin: 3rem 1.5rem;
+    padding: 1rem;
+}
+
+.arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;              /* espacio entre ícono y texto */
+    background-color: var(--primary);  /* #C3AB30 - oro Kinal */
+    color: #000000;
+    padding: 1rem 2rem;
+    border-radius: 50px;       /* pill shape, moderno */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(195, 171, 48, 0.3); /* sombra suave con el oro */
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.arrow-link:hover {
+    background-color: #d4bd3a;          /* oro un poco más claro */
+    transform: translateY(-3px);        /* elevación ligera */
+    box-shadow: 0 8px 20px rgba(195, 171, 48, 0.45);
+    border-color: var(--accent);        /* borde azul oscuro al hover */
+}
+
+.arrow-icon {
+    width: 28px;               /* tamaño cómodo */
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.arrow-link:hover .arrow-icon {
+    transform: translateX(6px); /* la flecha se mueve un poco a la derecha al hover */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .arrow-link {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+    .arrow-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
