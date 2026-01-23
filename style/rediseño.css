@@ -42,7 +42,7 @@ h1, h2, h3 {
   padding: 0 1.5rem;
 }
 
-/* Header mejorado */
+/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -103,7 +103,7 @@ h1, h2, h3 {
   color: var(--primary);
 }
 
-/* Hero refinado */
+/* Hero */
 .hero {
   position: relative;
   min-height: 95vh;
@@ -426,14 +426,12 @@ h1, h2, h3 {
   .stats-grid { gap: 2rem; }
 }
 
-/* ... todo tu CSS anterior ... */
 
 /* Soporte para anti-FOUC */
 body.loaded {
   visibility: visible;
 }
 
-/* Asegura que las secciones no tengan opacidad 0 antes de JS si no es necesario */
 .fade-in-section:not(.is-visible),
 .fade-in-card:not(.visible) {
   opacity: 0;
